@@ -18,7 +18,7 @@ function App() {
     const deleteContact = (contactId) => {
         setContacts(contacts.filter(item => item.id !== contactId));
     };
-
+// hello
     const filteredContacts = contacts.filter(contact =>
         contact.username.toLowerCase().includes(searchQuery.toLowerCase())
     );
