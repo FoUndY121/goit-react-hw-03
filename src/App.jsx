@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
+import React from 'react';
 import ContactForm from "./component/ContaktFrom/ContactForm.jsx";
 import ContactList from "./component/ContactList/ContactList.jsx";
+import { useLocalStorage } from './component/UseLocalStorage/useLocalStorage.js'; // или './useLocalStorage' — в зависимости от места
 
 function App() {
-    const [contacts, setContacts] = useState([]);
-    const [searchQuery, setSearchQuery] = useState(""); // <--- состояние поиска
+    const [contacts, setContacts] = useLocalStorage("contacts", []);
+    const [searchQuery, setSearchQuery] = React.useState("");
 
     const addContact = (newContact) => {
-        // Добавим ID для удаления и ключей
         const contactWithId = {
             ...newContact,
             id: Date.now()
@@ -18,15 +18,22 @@ function App() {
     const deleteContact = (contactId) => {
         setContacts(contacts.filter(item => item.id !== contactId));
     };
-// hello
+
     const filteredContacts = contacts.filter(contact =>
         contact.username.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
     return (
         <>
-            <ContactForm addContact={addContact}  setSearchQuery={setSearchQuery} searchQuery={searchQuery}/>
-            <ContactList contacts={filteredContacts} onDelete={deleteContact}/>
+            <ContactForm
+                addContact={addContact}
+                setSearchQuery={setSearchQuery}
+                searchQuery={searchQuery}
+            />
+            <ContactList
+                contacts={filteredContacts}
+                onDelete={deleteContact}
+            />
         </>
     );
 }
