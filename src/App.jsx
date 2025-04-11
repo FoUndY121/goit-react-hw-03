@@ -2,7 +2,6 @@ import React from 'react';
 import ContactForm from "./component/ContaktFrom/ContactForm.jsx";
 import ContactList from "./component/ContactList/ContactList.jsx";
 import { useLocalStorage } from './component/UseLocalStorage/useLocalStorage.js'; // или './useLocalStorage' — в зависимости от места
-
 function App() {
     const [contacts, setContacts] = useLocalStorage("contacts", []);
     const [searchQuery, setSearchQuery] = React.useState("");
@@ -24,7 +23,7 @@ function App() {
     );
 
     return (
-        <>
+        <div >
             <ContactForm
                 addContact={addContact}
                 setSearchQuery={setSearchQuery}
@@ -34,7 +33,7 @@ function App() {
                 contacts={filteredContacts}
                 onDelete={deleteContact}
             />
-        </>
+        </div>
     );
 }
 

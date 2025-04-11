@@ -2,7 +2,7 @@ import React, { useId } from 'react';
 import { Field, Form, Formik, ErrorMessage } from 'formik';
 import * as Yup from "yup";
 import { nanoid } from "nanoid";
-
+import s from "./ContactForm.module.css"
 function ContactForm({ addContact, setSearchQuery, searchQuery }) {
     const initialFormData = {
         username: '',
@@ -41,22 +41,23 @@ function ContactForm({ addContact, setSearchQuery, searchQuery }) {
                 onSubmit={handleSubmit}
             >
                 {() => (
-                    <Form>
+                    <Form className={s.form}>
                         <h4>Name</h4>
-                        <Field type="text" name="username" id={nameId} />
+                        <Field  className={s.formInput} name="username" id={nameId} />
                         <ErrorMessage name="username" component="div" style={{ color: 'red' }} />
 
                         <h4>Number</h4>
-                        <Field type="tel" name="number" id={numberId} />
+                        <Field className={s.formInput} type="tel" name="number" id={numberId} />
                         <ErrorMessage name="number" component="div" style={{ color: 'red' }} />
 
-                        <button type="submit">Apply</button>
+                        <button className={s.formButton} type="submit">Apply</button>
                     </Form>
                 )}
             </Formik>
 
             <div style={{ marginTop: "1rem" }}>
                 <input
+                    className={s.searchInput}
                     type="text"
                     placeholder="Поиск по имени"
                     value={searchQuery}

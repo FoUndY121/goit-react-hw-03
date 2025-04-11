@@ -1,0 +1,50 @@
+.body {
+    font-family: Arial, sans-serif;
+    background-color: #f6f6f6;
+    margin: 0;
+    padding: 2rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin-bottom: 2rem;
+}
+
+.formLabel {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.formInput {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.formButton {
+    padding: 0.5rem;
+    font-size: 1rem;
+    background-color: #0077ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100px;
+}
+
+.formButton:hover {
+    background-color: #005acc;
+}
+
+.search-input {
+    margin-bottom: 1.5rem;
+    padding: 0.5rem;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+

@@ -8,9 +8,11 @@ function ContactList({contacts,onDelete}) {
     return (
         <div >
             <h3>Список контактов:</h3>
-            <Contact contacts={contacts} onDelete={onDelete}/>
-        </div>
-    )
+            <ul className={s.contactList}>
+                <Contact contacts={contacts} onDelete={onDelete}/>
+            </ul>
+            </div>
+)
 }
 
 export default ContactList

@@ -1,24 +1,22 @@
 import React from "react";
-
-// function Contact({contacts})
+import s from "./Contacts.module.css";
 function Contact({contacts,onDelete})
 
 {
     return (
-       <div >
+       <>
            {contacts.map((item,index)=>{
                return(
-                   <ul key={item.id}>
-                       <p>#{index + 1}</p>
-                       <li>{item.username}</li>
-                       <li>{item.number}</li>
+                   <li className={s.contactItem} key={item.id}><p>#{index + 1}</p>
+                       <p>{item.number}</p>
+                          <p>{item.username}</p>
                        <button type="button" onClick={() => onDelete(item.id)}>Delete</button>
-                   </ul>
 
+                   </li>
                );
            })}
 
-       </div>
+       </>
 
     )
 }
