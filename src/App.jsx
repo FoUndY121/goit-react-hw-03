@@ -1,7 +1,7 @@
 import React from 'react';
-import ContactForm from "./Component/ContaktFrom/ContactForm.jsx";
-import ContactList from "./Component/ContactList/ContactList.jsx";
-import { useLocalStorage } from './Component/UseLocalStorage/useLocalStorage.js';
+import ContactForm from "./components/ContaktFrom/ContactForm.jsx";
+import ContactList from "./components/ContactList/ContactList.jsx";
+import { useLocalStorage } from './components/UseLocalStorage/useLocalStorage.js';
 function App() {
     const defaultContacts = [
         { id: 'id-1', username: 'Rosie Simpson', number: '459-12-56' },
