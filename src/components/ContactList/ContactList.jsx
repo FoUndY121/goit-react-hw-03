@@ -1,18 +1,19 @@
 import React from 'react'
-import s from "./ContactList.module.css"
+// import s from "./ContactList.module.css"
 import Contact from "../Contact/Contact.jsx";
-function ContactList({contacts,onDelete}) {
-    // const deleteContact = todoId => {
-    //     setContacts(contacts.filter(item => item.id !== todoId));
-    // };
+const ContactList = ({ contacts, onDelete }) => {
     return (
-        <div >
-            <h3>Список контактов:</h3>
-            <ul className={s.contactList}>
-                <Contact contacts={contacts} onDelete={onDelete}/>
-            </ul>
-            </div>
-)
-}
+        <ul>
+            {contacts.map(contact => (
+                <Contact
+                    key={contact.id}
+                    contact={contact}
+                    onDelete={onDelete}
+                />
+            ))}
+        </ul>
+    );
+};
 
-export default ContactList
+export default ContactList;
+
